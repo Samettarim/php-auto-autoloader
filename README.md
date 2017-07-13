@@ -6,6 +6,7 @@
 The only thing you have to do is to integrate the two files `init.php` and `class.Loader.php`, that's it :)
 And now instantiate your classes, interfaces, traits or even abstract classes, no matter where.
 
+## Example
 ```markdown
 <?php
 require_once 'init.php';
