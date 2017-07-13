@@ -34,6 +34,8 @@ require_once './autoload/class.Loader.php';
 </html>
 ```
 
+### Loader methods
+
 ## METHOD 1:
 That means we take the website root path and namespace as a folder path and the classname we put together with these.
 
