@@ -77,6 +77,16 @@ The complete path is the directory path, that you give the autoloader
 
 DEFAULT: `MBT_DOCUMENT_ROOT`
 
+You can change this default root here in file `class.Loader.php` on line 314
+```
+if (class_exists('autoload\Loader')) {
+    // Path to force - Default: MBT_DOCUMENT_ROOT
+    $GLOBALS['MBT_AUTOLOAD'] = new Loader(array(MBT_DOCUMENT_ROOT));
+} else {
+    trigger_error("The Class Loader() from Autoload can't initiate.", E_USER_ERROR);
+}
+```
+
 ### Example
 First Header | Second Header
 ------------ | -------------
