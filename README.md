@@ -40,10 +40,12 @@ require_once './autoload/class.Loader.php';
 That means we take the website root path and namespace as a folder path and the classname we put together with these.
 
 ## Example
-PATH:        /users/username/projects/sites/website/
-NAMESPACE:   modal
-CLASS:       AbstractEntity
-Then the result example /users/username/projects/sites/website/modal/class.AbstractEntity.php
+First Header | Second Header
+------------ | -------------
+PATH | `/users/username/projects/sites/website/`
+NAMESPACE | `modal`
+CLASS | `AbstractEntity`
+Then the result example | `/users/username/projects/sites/website/modal/class.AbstractEntity.php`
 
 ## METHOD 2:
 This function namspace as folder path and force only this path for class file.
