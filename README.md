@@ -7,7 +7,7 @@ The only thing you have to do is to integrate the two files `init.php` and `clas
 And now instantiate your classes, interfaces, traits or even abstract classes, no matter where.
 
 ## Example
-```markdown
+```php
 <?php
 require_once 'init.php';
 require_once './autoload/class.Loader.php';
@@ -20,6 +20,8 @@ require_once './autoload/class.Loader.php';
     </head>
     <body>
         <?php
+
+        define('MBT_DOCUMENT_ROOT', 'your-project-root-path');
         
         $class_one = new name_space\class_one();
         $class_one->method_from_class_one();
@@ -78,7 +80,7 @@ The complete path is the directory path, that you give the autoloader
 DEFAULT: `MBT_DOCUMENT_ROOT`
 
 You can change this default root here in file `class.Loader.php` on line 314
-```
+```pho
 if (class_exists('autoload\Loader')) {
     // Path to force - Default: MBT_DOCUMENT_ROOT
     $GLOBALS['MBT_AUTOLOAD'] = new Loader(array(MBT_DOCUMENT_ROOT));

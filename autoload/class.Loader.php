@@ -15,7 +15,6 @@ require_once 'class.LoaderAbstract.php';
  * @package     MelAbu
  * @subpackage  MB Tornado Ai
  * @since       1.0
- * @link        http://www.samet-tarim.de/melabu/mb-tornado-ai/ Framework-Autoload
  */
 class Loader extends LoaderAbstract {
 

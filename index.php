@@ -11,6 +11,8 @@ require_once './autoload/class.Loader.php';
     <body>
         <?php
         
+        define('MBT_DOCUMENT_ROOT', 'your-project-root-path');
+        
         $class_one = new name_space\class_one();
         $class_one->method_from_class_one();
 
