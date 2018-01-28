@@ -80,7 +80,7 @@ The complete path is the directory path, that you give the autoloader
 DEFAULT: `MBT_DOCUMENT_ROOT`
 
 You can change this default root here in file `class.Loader.php` on line 314
-```pho
+```php
 if (class_exists('autoload\Loader')) {
     // Path to force - Default: MBT_DOCUMENT_ROOT
     $GLOBALS['MBT_AUTOLOAD'] = new Loader(array(MBT_DOCUMENT_ROOT));
@@ -98,6 +98,20 @@ PATH | `/users/username/projects/sites/website/`
 
 MB Tornado Ai is a CMF & CMS mixin coming soon, this autoloader is one of parts from Framework.
 
-### Support or Contact
+## Contribute
 
-Please write issues here for support, thanks and have fun!
+Please an [issue](https://github.com/Samettarim/less-mixins/issues) if you
+think something could be improved. Please submit Pull Requests when ever
+possible.
+
+## Built with
+
+* [NetBeans](https://netbeans.org/) - NetBeans editor for error-free code
+
+## Authors
+
+* **Samet Tarim** - *All works* - [ProDeveloper](https://profiles.wordpress.org/prodeveloper/)
+
+## License
+
+[![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](http://creativecommons.org/publicdomain/zero/1.0/)
