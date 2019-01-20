@@ -96,7 +96,7 @@ PATH | `/users/username/projects/sites/website/`
 
 # Information
 
-MB Tornado Ai is a CMF & CMS mixin coming soon, this autoloader is one of parts from Framework.
+MB tnado Ai is a CMF & CMS mixin coming soon, this autoloader is one of parts from Framework.
 
 ## Contribute
 
