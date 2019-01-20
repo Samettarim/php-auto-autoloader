@@ -10,11 +10,13 @@ require_once 'class.LoaderAbstract.php';
  * 
  * This autoloader class Loader have three methods inside that checks for classes
  * 
- * @author      Samet Tarim <dev.tarim@gmail.com>
+ * @author      Samet Tarim (prod3v3loper)
  * @copyright   (c) 2017, Samet Tarim
+ * @link        https://www.tnado.com/
  * @package     MelAbu
- * @subpackage  MB Tornado Ai
+ * @subpackage  MB tnado Ai
  * @since       1.0
+ * @see         https://github.com/prod3v3loper/php-auto-autoloader
  */
 class Loader extends LoaderAbstract {
 

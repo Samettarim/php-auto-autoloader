@@ -100,7 +100,7 @@ MB Tornado Ai is a CMF & CMS mixin coming soon, this autoloader is one of parts 
 
 ## Contribute
 
-Please an [issue](https://github.com/Samettarim/less-mixins/issues) if you
+Please an [issue](https://github.com/prod3v3loper/less-mixins/issues) if you
 think something could be improved. Please submit Pull Requests when ever
 possible.
 
@@ -110,7 +110,7 @@ possible.
 
 ## Authors
 
-* **Samet Tarim** - *All works* - [ProDeveloper](https://profiles.wordpress.org/prodeveloper/)
+* **Samet Tarim** - *All works* - [ProDeveloper](https://www.tnado.com/author/prod3v3loper/)
 
 ## License
 

@@ -3,12 +3,13 @@
 /**
  * Description of Autoload Configuration
  * 
- * @author      Samet Tarim <dev.tarim@gmail.com>
+ * @author      Samet Tarim (prod3v3loper)
  * @copyright   (c) 2017, Samet Tarim
+ * @link        https://www.tnado.com/
  * @package     MelAbu
- * @subpackage  MB Tornado Ai
+ * @subpackage  MB tnado Ai
  * @since       1.0
- * @link        http://www.samet.tarim.de/melabu/mb-tornado-ai/config-autoload Framework-Config-Autoload
+ * @see         https://github.com/prod3v3loper/php-auto-autoloader
  */
 define('MBT_CORE_AUTOLOAD_INDEX', true);
 define('MBT_CORE_AUTOLOAD_READ_MAX_LINES', 49);

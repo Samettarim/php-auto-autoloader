@@ -5,12 +5,13 @@ namespace autoload;
 /**
  * Description of Autoload
  * 
- * @author      Samet Tarim <dev.tarim@gmail.com>
+ * @author      Samet Tarim (prod3v3loper)
  * @copyright   (c) 2017, Samet Tarim
+ * @link        https://www.tnado.com/
  * @package     MelAbu
- * @subpackage  MB Tornado Ai
+ * @subpackage  MB tnado Ai
  * @since       1.0
- * @link        http://www.samet-tarim.de/melabu/mb-tornado-ai/ Framework-Autoload
+ * @see         https://github.com/prod3v3loper/php-auto-autoloader
  */
 abstract class LoaderAbstract {
 

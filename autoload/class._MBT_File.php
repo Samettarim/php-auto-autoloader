@@ -5,12 +5,13 @@ namespace autoload;
 /**
  * Description of Files
  *
- * @author      Samet Tarim <dev.tarim@gmail.com>
+ * @author      Samet Tarim (prod3v3loper)
  * @copyright   (c) 2017, Samet Tarim
+ * @link        https://www.tnado.com/
  * @package     MelAbu
- * @subpackage  MB Tornado Ai
+ * @subpackage  MB tnado Ai
  * @since       1.0
- * @link        http://samet-tarim.de/melabu/mb-tornado-ai/files Framework-Files
+ * @see         https://github.com/prod3v3loper/php-auto-autoloader
  */
 class _MBT_File {
 

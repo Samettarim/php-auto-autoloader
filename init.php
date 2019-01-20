@@ -1,5 +1,5 @@
 <?php
-
+// Decomment for debug
 //error_reporting(-1); // Report all PHP errors
 //ini_set('error_reporting', -1); // -1 is E_ALL
 //ini_set('display_errors', 1); // Show all PHP errors
