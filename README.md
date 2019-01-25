@@ -110,10 +110,10 @@ possible.
 
 * [NetBeans](https://netbeans.org/) - NetBeans editor for error-free code
 
-## Authors
+# Authors
 
 * **Samet Tarim** - *All works* - [ProDeveloper](https://www.tnado.com/author/prod3v3loper/)
 
-## License
+# License
 
-[![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](http://creativecommons.org/publicdomain/zero/1.0/)
+[MIT](https://opensource.org/licenses/MIT)]
