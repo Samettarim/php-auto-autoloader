@@ -5,12 +5,13 @@ namespace autoload;
 /**
  * Description of Autoload
  * 
- * @author      Samet Tarim <dev.tarim@gmail.com>
+ * @author      Samet Tarim
  * @copyright   (c) 2017, Samet Tarim
  * @package     MelAbu
- * @subpackage  MB Tornado Ai
+ * @subpackage  MB tando Ai
  * @since       1.0
- * @link        http://www.samet-tarim.de/melabu/mb-tornado-ai/ Framework-Autoload
+ * @version     1.0.1
+ * @link        https://www.tnado.com/
  */
 abstract class LoaderAbstract {
 
@@ -140,9 +141,9 @@ abstract class LoaderAbstract {
             $this->found = true;
 
             // Debug information
-            $this->debugInfo[] = '<b>NEEDED CLASS</b>';
-            $this->debugInfo[] = '<b>Class:</b> <span style="color:lightblue;">' . trim($line) . '</span>';
-            $this->debugInfo[] = '<b>File:</b> ' . $filepath;
+            $this->debugInfo[] = '<b>NEEDED CLASS</b><br>';
+            $this->debugInfo[] = '<b>Class:</b> <span style="color:lightblue;">' . trim($line) . '</span><br>';
+            $this->debugInfo[] = '<b>File:</b> ' . $filepath . '<br>';
             $this->debugInfo[] = '<b>Line:</b> <span style="color:orange;">' . $lineNum . '</span><br>';
         }
     }
@@ -178,7 +179,7 @@ abstract class LoaderAbstract {
     public function logInfo() {
 
         $output = '';
-        $output .= '<table>';
+        $output .= '<table border="1">';
         $output .= '<tr>';
         $output .= '<th>Namespace as Foldername (Instance) </th>';
         $output .= '<th>Load Time</th>';
@@ -193,15 +194,17 @@ abstract class LoaderAbstract {
                 $counter = 0;
                 foreach ($debugInfo as $key => $value) {
 
-                    $output .= '</tr><tr>';
-                    $output .= '<td colspan="2" style="text-align:center;"><strong>' . $key . ' (' . count($value) . ')</strong></td>';
+                    // $output .= '</tr><tr>';
+                    // $output .= '<td colspan="2" style="text-align:center;"><strong>' . $key . ' (' . count($value) . ')</strong></td>';
 
                     $i = 0;
-                    foreach ($value as $val => $v) {
-                        $output .= '</tr><tr>';
-                        $output .= '<td>' . $val . '</td>';
-                        $output .= '<td>' . ($v > 0.100 ? '<span style="color:red">' . $v . ' sec.</span>' : '<span style="color:green">' . $v . ' sec.</span>') . '</td>';
-                        $i++;
+                    if (is_array($value)) {
+                        foreach ($value as $val => $v) {
+                            $output .= '</tr><tr>';
+                            $output .= '<td>' . $val . '</td>';
+                            $output .= '<td>' . ($v > 0.100 ? '<span style="color:red">' . $v . ' sec.</span>' : '<span style="color:green">' . $v . ' sec.</span>') . '</td>';
+                            $i++;
+                        }
                     }
 
                     $counter++;

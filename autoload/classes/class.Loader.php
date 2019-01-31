@@ -2,19 +2,18 @@
 
 namespace autoload;
 
-require_once 'core.config.php';
-require_once 'class.LoaderAbstract.php';
-
 /**
  * Description of Autoload
  * 
  * This autoloader class Loader have three methods inside that checks for classes
  * 
- * @author      Samet Tarim <dev.tarim@gmail.com>
+ * @author      Samet Tarim
  * @copyright   (c) 2017, Samet Tarim
  * @package     MelAbu
- * @subpackage  MB Tornado Ai
+ * @subpackage  MB tando Ai
  * @since       1.0
+ * @version     1.0.1
+ * @link        https://www.tnado.com/
  */
 class Loader extends LoaderAbstract {
 
@@ -188,29 +187,8 @@ class Loader extends LoaderAbstract {
         $reuri = get_request_uri();
         $this->debugInfo[$reuri][$name] = $endTimeA;
 
-        if (file_exists(MBT_CORE_AUTOLOAD_LOG_LOGS)) {
-
-            $_FILE = new _MBT_File();
-            $get = $_FILE->readLargeFile(array(
-                "path" => MBT_CORE_AUTOLOAD_LOG_LOGS,
-                "size" => 8192
-            ));
-            $arr = unserialize($get);
-
-            if (isset($arr[$reuri][$name]) && $arr[$reuri][$name] != $endTimeA) {
-                $arr[$reuri][$name] = $endTimeA;
-            } else if (!isset($arr[$reuri][$name])) {
-                $arr[$reuri][$name] = $endTimeA;
-            }
-
-            file_put_contents(MBT_CORE_AUTOLOAD_LOG_LOGS, serialize($arr), LOCK_EX);
-        }
-        //..
-        else {
-
-            file_put_contents(MBT_CORE_AUTOLOAD_LOG_LOGS, serialize($this->debugInfo), LOCK_EX);
-//            chmod(MBT_CORE_AUTOLOAD_LOG_LOGS, 0755);
-        }
+        file_put_contents(MBT_CORE_AUTOLOAD_LOG_LOGS, serialize($this->debugInfo), LOCK_EX);
+//        chmod(MBT_CORE_AUTOLOAD_LOG_LOGS, 0755);
 
         /**
          * Control debug
