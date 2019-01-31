@@ -1,25 +1,23 @@
-<?php
-// index.php
-define('MBT_DOCUMENT_ROOT', 'your-project-root-path');
-require_once 'init.php';
-require_once './autoload/class.Loader.php';
-?>
+<?php require_once './init.php'; ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>MB Tornado Ai - Autoload</title>
+        <title>MB tnado Ai - Autoload</title>
     </head>
     <body>
         <?php
         
-        $class_one = new name_space\class_one();
+        // METHOD 1: Fastest way, the namespace is foldername structure and filename is equal to filename
+        $class_one = new testclasses\classOne();
         $class_one->method_from_class_one();
 
-        $class_two = new class_two();
+        // METHOD 2: The slower way, namespace is equal to folder structure but the classname is differnt to the filename
+        $class_two = new testclasses\classes\class_two();
         $class_two->method_from_class_two();
 
-        $three_class = new name_space\three_class();
+        // METHOD 3: The slowest way, here ist nothing euqal
+        $three_class = new name_space\namespace2\three_class();
         $three_class->method_from_three_class();
         
         ?>
