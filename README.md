@@ -9,6 +9,7 @@ The only thing you have to do is to integrate the two files `init.php`, that's i
 And now instantiate your classes, interfaces, traits or even abstract classes, no matter where.
 
 ## Example
+
 ```php
 <?php
 require_once 'init.php';
@@ -62,12 +63,13 @@ The autoloader finds everything yourself you do not have to do anything except w
 That means we take the website root path and namespace as a folder path and the classname we put together with these.
 
 ### Example
+
 Type | Sample
 ---- | ------
-PATH | /users/username/projects/sites/website/
-NAMESPACE | modal
-CLASS | AbstractEntity
-Then the result example | /users/username/projects/sites/website/modal/class.AbstractEntity.php
+PATH | `/users/username/projects/sites/website/`
+NAMESPACE | `modal`
+CLASS | `AbstractEntity`
+Then the result example | `/users/username/projects/sites/website/modal/class.AbstractEntity.php`
 
 ## METHOD 2:
 
@@ -78,11 +80,12 @@ This means every file found in this folder is opened and searched for the classn
 As soon as the used class exists in a file, this is integrated.
 
 ### Example
+
 Type | Sample
 ---- | ------
-PATH | /users/username/projects/sites/website/
-NAMESPACE | modal
-Then the result example | /users/username/projects/sites/website/modal/
+PATH | `/users/username/projects/sites/website/`
+NAMESPACE | `modal`
+Then the result example | `/users/username/projects/sites/website/modal/`
 
 ## METHOD 3:
 
@@ -105,9 +108,10 @@ if (class_exists('autoload\Loader')) {
 ```
 
 ### Example
+
 Type | Sample
 ---- | ------
-PATH | /users/username/projects/sites/website/
+PATH | `/users/username/projects/sites/website/`
 
 # Information
 
