@@ -93,6 +93,15 @@ Then the result example | `/users/username/projects/sites/website/modal/`
 
 This method is the slowest, because it scans all your folders. 
 No matter how much files you have, all are opened, read and searched for the classname. 
+
+### Example
+
+Type | Sample
+---- | ------
+PATH | `/users/username/projects/sites/website/`
+
+# Root
+
 The complete path is the directory path, that you give the autoloader
 
 DEFAULT: `MBT_DOCUMENT_ROOT`
@@ -106,12 +115,6 @@ if (class_exists('autoload\Loader')) {
     trigger_error("The Class Loader() from Autoload can't initiate.", E_USER_ERROR);
 }
 ```
-
-### Example
-
-Type | Sample
----- | ------
-PATH | `/users/username/projects/sites/website/`
 
 # Information
 
