@@ -118,7 +118,7 @@ if (class_exists('autoload\Loader')) {
 
 # Information
 
-MB tnado Ai is a CMF & CMS mixin coming soon, this autoloader is one of parts from Framework.
+[tnado SEO & AMP CMS](https://www.tnado.com/), this autoloader is one of parts from Framework.
 
 ## Contribute
 
