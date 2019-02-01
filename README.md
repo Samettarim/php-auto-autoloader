@@ -62,7 +62,7 @@ The autoloader finds everything yourself you do not have to do anything except w
 That means we take the website root path and namespace as a folder path and the classname we put together with these.
 
 ### Example
-First Header | Second Header
+Type | Sample
 ------------ | -------------
 PATH | `/users/username/projects/sites/website/`
 NAMESPACE | `modal`
@@ -78,7 +78,7 @@ This means every file found in this folder is opened and searched for the classn
 As soon as the used class exists in a file, this is integrated.
 
 ### Example
-First Header | Second Header
+Type | Sample
 ------------ | -------------
 PATH | `/users/username/projects/sites/website/`
 NAMESPACE | `modal`
@@ -105,7 +105,7 @@ if (class_exists('autoload\Loader')) {
 ```
 
 ### Example
-First Header | Second Header
+Type | Sample
 ------------ | -------------
 PATH | `/users/username/projects/sites/website/`
 
