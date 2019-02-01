@@ -63,7 +63,7 @@ That means we take the website root path and namespace as a folder path and the 
 
 ### Example
 Type | Sample
------------- | -------------
+---- | ------
 PATH | `/users/username/projects/sites/website/`
 NAMESPACE | `modal`
 CLASS | `AbstractEntity`
@@ -79,7 +79,7 @@ As soon as the used class exists in a file, this is integrated.
 
 ### Example
 Type | Sample
------------- | -------------
+---- | ------
 PATH | `/users/username/projects/sites/website/`
 NAMESPACE | `modal`
 Then the result example | `/users/username/projects/sites/website/modal/`
@@ -106,7 +106,7 @@ if (class_exists('autoload\Loader')) {
 
 ### Example
 Type | Sample
------------- | -------------
+---- | ------
 PATH | `/users/username/projects/sites/website/`
 
 # Information
