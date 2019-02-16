@@ -55,7 +55,7 @@ define('MBT_DEBUG_DISPLAY_AUTOLOAD_SEARCH', true);
 
 # Root
 
-The complete path is the directory path, that the autoloader get by self
+The complete path is the directory path, that the autoloader get by self.
 
 DEFAULT: `MBT_DOCUMENT_ROOT`
 
@@ -84,29 +84,35 @@ That means we take the website root path and namespace as a folder path and the 
 
 ### Example
 
-Type | Sample
----- | ------
-PATH | `/users/username/projects/sites/website/`
-NAMESPACE | `modal`
-CLASS | `AbstractEntity`
-Then the result example | `/users/username/projects/sites/website/modal/class.AbstractEntity.php`
+**The instance:**
+`new testclasses\classOne();`
+
+Type | Sample | Description
+---- | ------ | ------
+PATH | `/users/username/projects/sites/website/` | MBT_DOCUMENT_ROOT
+NAMESPACE | `classes` | Like the folder name
+CLASS | `classOne` | Like the file name without extension
+Then the result example | `/users/username/projects/sites/website/testclasses/classOne.php` | 
 
 ## METHOD 2:
 
 > This method is slightly slower than the first, so 0.03 - 0.05 seconds
 
-This function namespace as folder path and force only this path for class `Abstract Entity` file.
+This function namespace as folder path and force only this path for class `class_two` (Example) file.
 However, this only occurs when the file does not match the specified class name.
 This means every file found in this folder is opened and searched for the classname. 
 As soon as the used class exists in a file, this is integrated and can use it.
 
 ### Example
 
-Type | Sample
----- | ------
-PATH | `/users/username/projects/sites/website/`
-NAMESPACE | `modal`
-Then the result example | `/users/username/projects/sites/website/modal/`
+**The instance:**
+`new testclasses\classes\class_two();`
+
+Type | Sample | Description
+---- | ------ | ------
+PATH | `/users/username/projects/sites/website/` | MBT_DOCUMENT_ROOT
+NAMESPACE | `testclasses\classes` | Like the folder name
+Then the result example | `/users/username/projects/sites/website/testclasses/classes/classTwo.php` | 
 
 ## METHOD 3:
 
@@ -118,9 +124,13 @@ This method intervenes only when none of the other methods was successful. So if
 
 ### Example
 
-Type | Sample
----- | ------
-PATH | `/users/username/projects/sites/website/`
+**The instance:**
+`new testclasses\classes\three_class();`
+
+Type | Sample | Description
+---- | ------ | ------
+PATH | `/users/username/projects/sites/website/` | MBT_DOCUMENT_ROOT
+Then the result example | `/users/username/projects/sites/website/testclasses/classThree.php` | 
 
 # Information
 
