@@ -13,7 +13,7 @@ namespace autoload;
  * @since       1.0
  * @see         https://github.com/prod3v3loper/php-auto-autoloader
  */
-abstract class LoaderAbstract {
+class LoaderHelper {
 
     /**
      * 
@@ -35,7 +35,7 @@ abstract class LoaderAbstract {
     protected $debugInfo = array();
 
     /**
-     * This function is for index a file when is a class file and not in the array
+     * This function is for the index, a file is a class file and not in the array
      * 
      * @param type $classname
      * @param type $filepath
@@ -43,13 +43,15 @@ abstract class LoaderAbstract {
     protected function loadIndex($classname, $filepath) {
 
         $classname = (string) trim(mb_substr($classname, 0, strpos($classname, ' ')));
+
         if ($classname AND ! in_array($classname, array_keys($this->loader))) {
             $this->loader[$classname] = $filepath;
         }
     }
 
     /**
-     * This function write the load files as index for searched and founded classes
+     * This function write the load files as index for searched and founded classes.
+     * Needed for full search and fast found
      * 
      * Serilize array and save as string in file
      * This file loads all classes that found and needed
@@ -86,7 +88,8 @@ abstract class LoaderAbstract {
              */
             $this->loadHandler = unserialize(file_get_contents(MBT_CORE_AUTOLOAD_LOG_FILE));
             foreach ($this->loadHandler as $class => $classFile) {
-                if (file_exists($classFile)) {
+                $info = pathinfo($classFile);
+                if (file_exists($classFile) && $info["extension"] == "php") {
                     require_once $classFile;
                 }
             }
@@ -109,8 +112,8 @@ abstract class LoaderAbstract {
 
         // Get actually namespace
         $namespaceRegEx = '/((namespace)+\s*(' . preg_quote($this->splitInsatnce(true)) . ');)/';
-        if (preg_match_all($namespaceRegEx, $line, $arr)) {
 
+        if (preg_match_all($namespaceRegEx, $line, $arr)) {
             // Debug information
             $this->debugInfo[] = '<b>Namespace:</b> <span style="color:blue;">' . $arr[0][0] . '</span>';
         }
@@ -118,6 +121,7 @@ abstract class LoaderAbstract {
 
     /**
      * This function get the actually needed class and class filepath
+     * Check extentions for not load wrong files
      * 
      * @todo Check the next line for {
      * @param type $filepath
@@ -133,18 +137,21 @@ abstract class LoaderAbstract {
 
             // Founded class
             $class = $arr[3][0];
+            // Get pathinfo
+            $info = pathinfo($filepath);
 
-            // Loader class and filepath
-            $this->loader[$class] = $filepath;
-//            $this->loadIndex($class, $filepath);
-            // Found true for break
-            $this->found = true;
-
-            // Debug information
-            $this->debugInfo[] = '<b>NEEDED CLASS</b><br>';
-            $this->debugInfo[] = '<b>Class:</b> <span style="color:lightblue;">' . trim($line) . '</span><br>';
-            $this->debugInfo[] = '<b>File:</b> ' . $filepath . '<br>';
-            $this->debugInfo[] = '<b>Line:</b> <span style="color:orange;">' . $lineNum . '</span><br>';
+            if (!isset($this->loader[$class]) && file_exists($filepath) && $info["extension"] == "php") {
+                // Hold loader class and filepath
+                $this->loader[$class] = $filepath;
+                // $this->loadIndex($class, $filepath);
+                // Found true for break
+                $this->found = true;
+                // Debug information
+                $this->debugInfo[] = '<b>NEEDED CLASS</b><br>';
+                $this->debugInfo[] = '<b>Class:</b> <span style="color:lightblue;">' . trim($line) . '</span><br>';
+                $this->debugInfo[] = '<b>File:</b> ' . $filepath . '<br>';
+                $this->debugInfo[] = '<b>Line:</b> <span style="color:orange;">' . $lineNum . '</span><br>';
+            }
         }
     }
 
@@ -155,26 +162,31 @@ abstract class LoaderAbstract {
      * @uses splitInsatnce(true) For namespace
      * 
      * @param type $namespaceORclass
-     * @return type
+     * @return type String
      */
     protected function splitInsatnce($namespaceORclass = false) {
 
         if ($this->insatnce) {
+
             $this->namespace = explode('\\', $this->insatnce);
             $getLastForName = count($this->namespace) - 1;
             $classname = $this->namespace[$getLastForName];
             unset($this->namespace[$getLastForName]);
+
             if ($namespaceORclass == true) {
                 $return = implode('\\', $this->namespace);
             } else {
                 $return = $classname;
             }
+
             return $return;
         }
     }
 
     /**
-     * This function gives information for debug
+     * This function gives information for loadtime e.g.
+     * 
+     * @return type String
      */
     public function logInfo() {
 
@@ -212,9 +224,15 @@ abstract class LoaderAbstract {
             }
         }
         $output .= '</table>';
+
         return $output;
     }
 
+    /**
+     * This function gives debug information
+     * 
+     * @return type String
+     */
     public function getDebug() {
 
         $output = '';
@@ -238,6 +256,7 @@ abstract class LoaderAbstract {
             $i++;
         }
         $output .= '</table>';
+
         return $output;
     }
 

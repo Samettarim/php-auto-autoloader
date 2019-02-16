@@ -14,6 +14,8 @@
 
 // Set this to false so that you no longer see the debugging
 define('MBT_DEBUG_DISPLAY_AUTOLOAD', true);
+// Set this to false so that you no longer see the debugging
+define('MBT_DEBUG_DISPLAY_AUTOLOAD_SEARCH', false);
 // This activate/deactivate the indexing of the classes in file
 define('MBT_CORE_AUTOLOAD_INDEX', true);
 // Max read lines in file to find the class

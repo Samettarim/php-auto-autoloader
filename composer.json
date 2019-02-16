@@ -1,0 +1,14 @@
+{
+    "name": "composer-testing",
+    "description": "Testing composer for php",
+    "authors": [
+        {
+            "name": "prod3v3loper"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "doctrine/orm": "2.*",
+        "ircmaxell/password-compat": "1.*"
+    }
+}

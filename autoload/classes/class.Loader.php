@@ -15,7 +15,7 @@ namespace autoload;
  * @since       1.0
  * @see         https://github.com/prod3v3loper/php-auto-autoloader
  */
-class Loader extends LoaderAbstract {
+class Loader extends LoaderHelper {
 
     /**
      * Directory for loop
@@ -193,8 +193,8 @@ class Loader extends LoaderAbstract {
         /**
          * Control debug
          */
-        if (MBT_DEBUG_DISPLAY_AUTOLOAD == true) {
-//            echo $this->getDebug();
+        if (MBT_DEBUG_DISPLAY_AUTOLOAD_SEARCH == true) {
+           echo $this->getDebug();
         }
     }
 
@@ -219,7 +219,7 @@ class Loader extends LoaderAbstract {
                 if ($lineNum > MBT_CORE_AUTOLOAD_READ_MAX_LINES || $this->found == true) {
 
                     $this->found = false;
-                    break; // DEFAULT: 25 lines or by found = true, break the loop
+                    break; // DEFAULT: 49 lines or by found = true, break the loop
                 }
             }
         }
