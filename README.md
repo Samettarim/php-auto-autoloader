@@ -72,8 +72,8 @@ The autoloader finds everything yourself you do not have to do anything except w
 
 Method | Namespace (Instance) | Path | Load Time
 ------------ | ------------ | ------------- | -------------
-1 | testclasses\classOne | php-auto-autoloader/testclasses/classOne.php | 0.002 sec.
-2 | testclasses\classes\classTwo.php | php-auto-autoloader/testclasses/classes/classTwo.php | 0.001 sec.
+1 | testclasses\classOne | php-auto-autoloader/testclasses/classOne.php | 0.001 sec.
+2 | testclasses\classes\classTwo.php | php-auto-autoloader/testclasses/classes/classTwo.php | 0.002 sec.
 3 | name_space\namespace2\three_class | php-auto-autoloader/testclasses/classThree.php | 0.021 sec.
 
 ## METHOD 1:
