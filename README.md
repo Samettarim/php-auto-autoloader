@@ -41,20 +41,27 @@ require_once 'init.php';
 ```
 # Debug
 
-autoload/core.config.php
+**autoload/core.config.php**
+
+Set this to false so that you no longer see the debugging
 ```php
-// Set this to false so that you no longer see the debugging
 define('MBT_DEBUG_DISPLAY_AUTOLOAD', true);
 ```
 
-Namespace as Foldername (Instance) | Load Time
------------- | -------------
-testclasses\classOne | 0.002 sec.
-testclasses\classes\class_two | 0.001 sec.
-name_space\namespace2\three_class | 0.021 sec.
+Look at which classes where were found.
+```php
+define('MBT_DEBUG_DISPLAY_AUTOLOAD_SEARCH', true);
+```
 
 # Loader methods
+
 The autoloader finds everything yourself you do not have to do anything except write your class and instanzieren and use.
+
+Method | Namespace (Instance) | Path | Load Time
+------------ | ------------ | ------------- | -------------
+1 | testclasses\classOne | php-auto-autoloader/testclasses/classOne.php | 0.002 sec.
+2 | testclasses\classes\classTwo.php | php-auto-autoloader/testclasses/classes/classTwo.php | 0.001 sec.
+3 | name_space\namespace2\three_class | php-auto-autoloader/testclasses/classThree.php | 0.021 sec.
 
 ## METHOD 1:
 
@@ -75,9 +82,10 @@ Then the result example | `/users/username/projects/sites/website/modal/class.Ab
 
 > This method is slightly slower than the first, so 0.03 - 0.05 seconds
 
-This function namspace as folder path and force only this path for class file.
+This function namespace as folder path and force only this path for class `Abstract Entity` file.
+However, this only occurs when the file does not match the specified class name.
 This means every file found in this folder is opened and searched for the classname. 
-As soon as the used class exists in a file, this is integrated.
+As soon as the used class exists in a file, this is integrated and can use it.
 
 ### Example
 
@@ -102,18 +110,15 @@ PATH | `/users/username/projects/sites/website/`
 
 # Root
 
-The complete path is the directory path, that you give the autoloader
+The complete path is the directory path, that the autoloader get by self
 
 DEFAULT: `MBT_DOCUMENT_ROOT`
 
-You can change this default root here in file `class.Loader.php` on line 314
+The autoloader define get the web root by self on require the `init.php`
 ```php
-if (class_exists('autoload\Loader')) {
-    // Path to force - Default: MBT_DOCUMENT_ROOT
-    $GLOBALS['MBT_AUTOLOAD'] = new Loader(array(MBT_DOCUMENT_ROOT));
-} else {
-    trigger_error("The Class Loader() from Autoload can't initiate.", E_USER_ERROR);
-}
+define('MBT_DOCUMENT_ROOT', __DIR__);
+define('MBT_SERVER_ROOT', str_replace(MBT_DOCUMENT_ROOT, '', str_replace(filter_input(INPUT_SERVER, 'DOCUMENT_ROOT'), '', str_replace("\\", "/", __DIR__))));
+define('MBT_HTTP_ROOT', get_protocol() . get_host() . MBT_SERVER_ROOT);
 ```
 
 # Information
@@ -128,11 +133,11 @@ possible.
 
 ## Built with
 
-* [NetBeans](https://netbeans.org/) - NetBeans editor for error-free code
+[NetBeans](https://netbeans.org/) - NetBeans editor for error-free code
 
 # Authors
 
-* **Samet Tarim** - *All works* - [prod3v3loper](https://www.tnado.com/author/prod3v3loper/)
+**Samet Tarim** - *All works* - [prod3v3loper](https://www.tnado.com/author/prod3v3loper/)
 
 # License
 
