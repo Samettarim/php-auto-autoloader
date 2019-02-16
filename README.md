@@ -53,6 +53,19 @@ Look at which classes where were found.
 define('MBT_DEBUG_DISPLAY_AUTOLOAD_SEARCH', true);
 ```
 
+# Root
+
+The complete path is the directory path, that the autoloader get by self
+
+DEFAULT: `MBT_DOCUMENT_ROOT`
+
+The autoloader define get the web root by self on require the `init.php`
+```php
+define('MBT_DOCUMENT_ROOT', __DIR__);
+define('MBT_SERVER_ROOT', str_replace(MBT_DOCUMENT_ROOT, '', str_replace(filter_input(INPUT_SERVER, 'DOCUMENT_ROOT'), '', str_replace("\\", "/", __DIR__))));
+define('MBT_HTTP_ROOT', get_protocol() . get_host() . MBT_SERVER_ROOT);
+```
+
 # Loader methods
 
 The autoloader finds everything yourself you do not have to do anything except write your class and instanzieren and use.
@@ -101,25 +114,13 @@ Then the result example | `/users/username/projects/sites/website/modal/`
 
 This method is the slowest, because it scans all your folders. 
 No matter how much files you have, all are opened, read and searched for the classname. 
+This method intervenes only when none of the other methods was successful. So if the namespace was not just a folder name and the class name was not filename.
 
 ### Example
 
 Type | Sample
 ---- | ------
 PATH | `/users/username/projects/sites/website/`
-
-# Root
-
-The complete path is the directory path, that the autoloader get by self
-
-DEFAULT: `MBT_DOCUMENT_ROOT`
-
-The autoloader define get the web root by self on require the `init.php`
-```php
-define('MBT_DOCUMENT_ROOT', __DIR__);
-define('MBT_SERVER_ROOT', str_replace(MBT_DOCUMENT_ROOT, '', str_replace(filter_input(INPUT_SERVER, 'DOCUMENT_ROOT'), '', str_replace("\\", "/", __DIR__))));
-define('MBT_HTTP_ROOT', get_protocol() . get_host() . MBT_SERVER_ROOT);
-```
 
 # Information
 
