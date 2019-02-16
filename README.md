@@ -1,4 +1,4 @@
-# php-auto-autoloader
+# PHP Auto Autoloader
 
 With this autoloader, you do not need any more, no matter where you have a master in your root, the autoloader of MB tnado Ai will find it.
 [Theme Page of this Site](https://prod3v3loper.github.io/php-auto-autoloader/)
@@ -41,7 +41,7 @@ require_once 'init.php';
 ```
 # Debug
 
-**autoload/core.config.php**
+`autoload/core.config.php`
 
 Set this to false so that you no longer see the debugging
 ```php
