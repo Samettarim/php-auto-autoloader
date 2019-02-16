@@ -138,13 +138,9 @@ Then the result example | `/users/username/projects/sites/website/testclasses/cl
 
 ## Contribute
 
-Please an [issue](https://github.com/prod3v3loper/less-mixins/issues) if you
+Please an [issue](https://github.com/prod3v3loper/php-auto-autoloader/issues) if you
 think something could be improved. Please submit Pull Requests when ever
 possible.
-
-## Built with
-
-[NetBeans](https://netbeans.org/) - NetBeans editor for error-free code
 
 # Authors
 
