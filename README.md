@@ -1,5 +1,11 @@
 # PHP Auto Autoloader
 
+![alt text](https://img.shields.io/github/languages/top/prod3v3loper/php-auto-autoloader.svg?style=flat "Language")
+![alt text](https://img.shields.io/github/repo-size/prod3v3loper/php-auto-autoloader.svg?style=flat "Repo size")
+![alt text](https://img.shields.io/github/languages/code-size/prod3v3loper/php-auto-autoloader.svg?style=flat "Code size")
+![alt text](https://img.shields.io/github/license/prod3v3loper/php-auto-autoloader.svg?style=flat "License")
+[![alt text](https://img.shields.io/website-up-down-green-red/https/www.tnado.com/open-source-projects-by-prod3v3loper.svg?style=flat "Website")](https://www.tnado.com/open-source-projects-by-prod3v3loper/ "Website")
+
 With this autoloader, you do not need any more, no matter where you have a master in your root, the autoloader of MB tnado Ai will find it.
 [Theme Page of this Site](https://prod3v3loper.github.io/php-auto-autoloader/)
 
