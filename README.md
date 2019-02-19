@@ -1,6 +1,7 @@
 # PHP Auto Autoloader
 
 ![alt text](https://img.shields.io/github/languages/top/prod3v3loper/php-auto-autoloader.svg?style=flat "Language")
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/90539baa57ba4ea1beb8451090f42547)](https://www.codacy.com/app/prod3v3loper/php-auto-autoloader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=prod3v3loper/php-auto-autoloader&amp;utm_campaign=Badge_Grade)
 ![alt text](https://img.shields.io/github/repo-size/prod3v3loper/php-auto-autoloader.svg?style=flat "Repo size")
 ![alt text](https://img.shields.io/github/languages/code-size/prod3v3loper/php-auto-autoloader.svg?style=flat "Code size")
 ![alt text](https://img.shields.io/github/license/prod3v3loper/php-auto-autoloader.svg?style=flat "License")
