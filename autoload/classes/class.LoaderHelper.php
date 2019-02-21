@@ -43,7 +43,6 @@ class LoaderHelper {
     protected function loadIndex($classname, $filepath) {
 
         $classname = (string) trim(mb_substr($classname, 0, strpos($classname, ' ')));
-
         if ($classname AND ! in_array($classname, array_keys($this->loader))) {
             $this->loader[$classname] = $filepath;
         }
@@ -112,7 +111,6 @@ class LoaderHelper {
 
         // Get actually namespace
         $namespaceRegEx = '/((namespace)+\s*(' . preg_quote($this->splitInsatnce(true)) . ');)/';
-
         if (preg_match_all($namespaceRegEx, $line, $arr)) {
             // Debug information
             $this->debugInfo[] = '<b>Namespace:</b> <span style="color:blue;">' . $arr[0][0] . '</span>';
@@ -134,12 +132,10 @@ class LoaderHelper {
         // Get actually class
         $classRegEx = '/((interface|abstract\s+class|class|trait)+\s+(' . preg_quote($this->splitInsatnce()) . ')(.*)\{?)/';
         if (preg_match_all($classRegEx, trim($line), $arr)) {
-
             // Founded class
             $class = $arr[3][0];
             // Get pathinfo
             $info = pathinfo($filepath);
-
             if (!isset($this->loader[$class]) && file_exists($filepath) && $info["extension"] == "php") {
                 // Hold loader class and filepath
                 $this->loader[$class] = $filepath;
@@ -172,7 +168,6 @@ class LoaderHelper {
             $getLastForName = count($this->namespace) - 1;
             $classname = $this->namespace[$getLastForName];
             unset($this->namespace[$getLastForName]);
-
             if ($namespaceORclass == true) {
                 $return = implode('\\', $this->namespace);
             } else {
@@ -196,19 +191,13 @@ class LoaderHelper {
         $output .= '<th>Namespace as Foldername (Instance) </th>';
         $output .= '<th>Load Time</th>';
         $output .= '</tr>';
-
         if (file_exists(MBT_CORE_AUTOLOAD_LOG_LOGS)) {
-
             $debugInfo = unserialize(file_get_contents(MBT_CORE_AUTOLOAD_LOG_LOGS));
-
             if ($debugInfo) {
-
                 $counter = 0;
                 foreach ($debugInfo as $key => $value) {
-
                     // $output .= '</tr><tr>';
                     // $output .= '<td colspan="2" style="text-align:center;"><strong>' . $key . ' (' . count($value) . ')</strong></td>';
-
                     $i = 0;
                     if (is_array($value)) {
                         foreach ($value as $val => $v) {
@@ -218,7 +207,6 @@ class LoaderHelper {
                             $i++;
                         }
                     }
-
                     $counter++;
                 }
             }
@@ -240,7 +228,6 @@ class LoaderHelper {
         $output .= '<tr>';
         $output .= '<th>Debugging</th>';
         $output .= '</tr>';
-
         if ($this->debugInfo) {
             $i = 0;
             foreach ($this->debugInfo as $key => $value) {

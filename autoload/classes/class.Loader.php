@@ -209,15 +209,11 @@ class Loader extends LoaderHelper {
         $this->file = $this->getFile($filepath);
         if (false != $this->file) {
             foreach ($this->file as $lineNum => $line) {
-
                 // Get actually namespace
 //                $this->getNamespace($line, $arr);
-//                
                 // Get actually class
                 $this->getClass($filepath, $line, $arr, $lineNum);
-
                 if ($lineNum > MBT_CORE_AUTOLOAD_READ_MAX_LINES || $this->found == true) {
-
                     $this->found = false;
                     break; // DEFAULT: 49 lines or by found = true, break the loop
                 }
