@@ -6,7 +6,7 @@ class class_two {
 
     public function method_from_class_two() {
 
-       echo "<p>I am Class <b>", __CLASS__, "</b> have a method <b>", __METHOD__, "</b></p>";
+       echo "<p>I am Class <b>class_two</b> have a method <b>method_from_class_two</b></p>";
     }
 
 }
