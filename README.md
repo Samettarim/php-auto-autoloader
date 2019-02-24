@@ -12,7 +12,7 @@ With this autoloader, you do not need any more, no matter where you have a maste
 
 # Usage
 
-The only thing you have to do is to integrate the two file `init.php` and the autoload folder to the root of your project, that's it :)
+The only thing you have to do is to integrate the file `init.php` and the autoload folder to the root of your project, that's it :)
 And now instantiate your classes, interfaces, traits or even abstract classes, no matter where.
 
 ## Example
