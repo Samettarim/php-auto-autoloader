@@ -97,7 +97,7 @@ That means we take the website root path and namespace as a folder path and the 
 Type | Sample | Description
 ---- | ------ | ------
 PATH | `/users/username/projects/sites/website/` | MBT_DOCUMENT_ROOT
-NAMESPACE | `classes` | Like the folder name
+NAMESPACE | `testclasses` | Like the folder name
 CLASS | `classOne` | Like the file name without extension
 Then the result example | `/users/username/projects/sites/website/testclasses/classOne.php` | 
 
