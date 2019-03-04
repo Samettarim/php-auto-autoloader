@@ -6,8 +6,8 @@
  * @author      Samet Tarim (prod3v3loper)
  * @copyright   (c) 2017, Samet Tarim
  * @link        https://www.tnado.com/
- * @package     MelAbu
- * @subpackage  MB tnado Ai
+ * @package     Melabuai
+ * @subpackage  autoloader
  * @since       1.0
  * @see         https://github.com/prod3v3loper/php-auto-autoloader
  */

@@ -1,13 +1,14 @@
 {
-    "name": "prod3v3loper/php-auto-aotoloader",
+    "name": "prod3v3loper/php-auto-autoloader",
     "type": "library",
-    "description": "Testing composer for php",
+    "description": "Need any more, no matter where you have a master in your root, the autoloader will find it.",
+    "keywords": ["autoloader"],
     "homepage": "https://www.tnado.com/open-source-projects-by-prod3v3loper/",
     "license": "MIT",
     "repositories": [
         {
             "type": "git",
-            "url": "https://github.com/prod3v3loper/php-auto-aotoloader.git"
+            "url": "https://github.com/prod3v3loper/php-auto-autoloader.git"
         }
     ],
     "authors": [
@@ -18,13 +19,16 @@
         }
     ],
     "autoload": {
-        "psr-4": { "Syn\\": "src/" }
+        "psr-4": { "Aautoloder\\": "autoload/src" }
     },
     "autoload-dev": {
-        "psr-4": { "Syn\\": "tests/" }
+        "psr-4": { 
+            "Aautoloder\\": "autoload/src",
+            "Aautoloder\\": "tests/" 
+        }
     },
     "require": {
-        "php": ">=7.0"
+        "php": ">=5.1.2"
     },
     "require-dev": {
         "phpunit/phpunit": "^7"

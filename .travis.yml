@@ -1,0 +1,14 @@
+language: php
+
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+
+php:
+  - 7.2
+  - 7.3
+
+install:
+  - composer install
+  
+script: phpunit --exclude-group FITS --bootstrap vendor/autoload.php tests/LoaderTest

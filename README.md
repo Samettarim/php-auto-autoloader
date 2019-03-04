@@ -1,11 +1,11 @@
 # PHP Auto Autoloader
 
-![alt text](https://img.shields.io/github/languages/top/prod3v3loper/php-auto-autoloader.svg?style=flat "Language")
+![Language](https://img.shields.io/github/languages/top/prod3v3loper/php-auto-autoloader.svg?style=flat "Language")
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/90539baa57ba4ea1beb8451090f42547)](https://www.codacy.com/app/prod3v3loper/php-auto-autoloader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=prod3v3loper/php-auto-autoloader&amp;utm_campaign=Badge_Grade)
-![alt text](https://img.shields.io/github/repo-size/prod3v3loper/php-auto-autoloader.svg?style=flat "Repo size")
-![alt text](https://img.shields.io/github/languages/code-size/prod3v3loper/php-auto-autoloader.svg?style=flat "Code size")
-![alt text](https://img.shields.io/github/license/prod3v3loper/php-auto-autoloader.svg?style=flat "License")
-[![alt text](https://img.shields.io/website-up-down-green-red/https/www.tnado.com/open-source-projects-by-prod3v3loper.svg?style=flat "Website")](https://www.tnado.com/open-source-projects-by-prod3v3loper/ "Website")
+![Repo Size](https://img.shields.io/github/repo-size/prod3v3loper/php-auto-autoloader.svg?style=flat "Repo size")
+![Code SIze](https://img.shields.io/github/languages/code-size/prod3v3loper/php-auto-autoloader.svg?style=flat "Code size")
+![MIT License](https://img.shields.io/github/license/prod3v3loper/php-auto-autoloader.svg?style=flat "MIT License")
+[![Website](https://img.shields.io/website-up-down-green-red/https/www.tnado.com/open-source-projects-by-prod3v3loper.svg?style=flat "Website")](https://www.tnado.com/open-source-projects-by-prod3v3loper/ "Website")
 
 With this autoloader, you do not need any more, no matter where you have a master in your root, the autoloader of MB tnado Ai will find it.
 [Theme Page of this Site](https://prod3v3loper.github.io/php-auto-autoloader/)
@@ -15,11 +15,18 @@ With this autoloader, you do not need any more, no matter where you have a maste
 The only thing you have to do is to integrate the file `init.php` and the autoload folder to the root of your project, that's it :)
 And now instantiate your classes, interfaces, traits or even abstract classes, no matter where.
 
-## Example
+## Git clone
+
+```
+git clone https://github.com/prod3v3loper/syntaxo.git /Users/username/projects/
+```
+
+Get per [Git](https://git-scm.com/) or download and use it.
 
 ```php
 <?php
-require_once 'init.php';
+define('MBT_DOCUMENT_ROOT', __DIR__);
+require_once './autoload/src/class.Loader.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -46,6 +53,54 @@ require_once 'init.php';
     </body>
 </html>
 ```
+
+## Packagist with Composer
+
+This solution extends the vendor autoloader because it calls the files with certain criteria. The extension allows you to call classes wherever the Autloder is involved.
+
+Autoload and package in **composer.json**
+```json
+{
+    "autoload": {
+        "psr-4": { "Aautoloder\\": "autoload/src" }
+    },
+    "require": {
+        "prod3v3loper/php-auto-autoloader": ">=1.0"
+    },
+```
+
+```php
+<?php
+define('MBT_DOCUMENT_ROOT', __DIR__);
+require_once __DIR__ . '/vendor/autoload.php';
+new \Aautoloder\Loader(array(MBT_DOCUMENT_ROOT));
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>MB tnado Ai - Autoload</title>
+    </head>
+    <body>
+        <?php
+
+        // METHOD 1: Fastest way, the namespace is foldername structure and filename is equal to filename
+        $class_one = new testclasses\classOne();
+        $class_one->method_from_class_one();
+
+        // METHOD 2: The slower way, namespace is equal to folder structure but the classname is differnt to the filename
+        $class_two = new testclasses\classes\class_two();
+        $class_two->method_from_class_two();
+
+        // METHOD 3: The slowest way, here ist nothing euqal
+        $three_class = new name_space\namespace2\three_class();
+        $three_class->method_from_three_class();
+        
+        ?>
+    </body>
+</html>
+```
+
 # Debug
 
 `autoload/core.config.php`
@@ -69,7 +124,7 @@ DEFAULT: `MBT_DOCUMENT_ROOT`
 The autoloader define get the web root by self on require the `init.php`
 ```php
 define('MBT_DOCUMENT_ROOT', __DIR__);
-define('MBT_SERVER_ROOT', str_replace(MBT_DOCUMENT_ROOT, '', str_replace(filter_input(INPUT_SERVER, 'DOCUMENT_ROOT'), '', str_replace("\\", "/", __DIR__))));
+define('MBT_SERVER_ROOT', str_replace(MBT_DOCUMENT_ROOT, '', str_replace(filter_input(INPUT_SERVER, 'DOCUMENT_ROOT'), '', str_replace("\\", "/", MBT_DOCUMENT_ROOT))));
 define('MBT_HTTP_ROOT', get_protocol() . get_host() . MBT_SERVER_ROOT);
 ```
 

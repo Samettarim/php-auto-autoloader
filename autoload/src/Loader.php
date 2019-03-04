@@ -1,6 +1,12 @@
 <?php
 
-namespace autoload;
+declare(strict_types = 1);
+
+namespace Aautoloder;
+
+require_once "class.LoaderHelper.php";
+require_once "core.config.php";
+require_once "func.core.php";
 
 /**
  * Description of Autoload
@@ -10,8 +16,8 @@ namespace autoload;
  * @author      Samet Tarim (prod3v3loper)
  * @copyright   (c) 2017, Samet Tarim
  * @link        https://www.tnado.com/
- * @package     MelAbu
- * @subpackage  MB tnado Ai
+ * @package     Melabuai
+ * @subpackage  autoloader
  * @since       1.0
  * @see         https://github.com/prod3v3loper/php-auto-autoloader
  */
@@ -282,9 +288,6 @@ class Loader extends LoaderHelper {
 
 }
 
-if (class_exists('autoload\Loader')) {
-    // Path to force - Default: MBT_DOCUMENT_ROOT
-    $GLOBALS['MBT_AUTOLOAD'] = new Loader(array(MBT_DOCUMENT_ROOT));
-} else {
-    trigger_error("The Class Loader() from Autoload can't initiate.", E_USER_ERROR);
-}
+// Define web roots
+define('MBT_SERVER_ROOT', str_replace(MBT_DOCUMENT_ROOT, '', str_replace(filter_input(INPUT_SERVER, 'DOCUMENT_ROOT'), '', str_replace("\\", "/", MBT_DOCUMENT_ROOT))));
+define('MBT_HTTP_ROOT', get_protocol() . get_host() . MBT_SERVER_ROOT);
