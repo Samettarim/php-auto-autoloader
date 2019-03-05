@@ -26,7 +26,8 @@ Get per [Git](https://git-scm.com/) or download and use it.
 ```php
 <?php
 define('MBT_DOCUMENT_ROOT', __DIR__);
-require_once './autoload/src/class.Loader.php';
+require_once './autoload/src/Loader.php';
+new \Aautoloder\Loader(array(MBT_DOCUMENT_ROOT));
 ?>
 <!DOCTYPE html>
 <html>
