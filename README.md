@@ -76,7 +76,7 @@ new \Aautoloder\Loader(array(MBT_DOCUMENT_ROOT));
 
 ## Git clone
 
-Get per [Git](https://git-scm.com/) or download and use it.
+Get per [Git](https://git-scm.com/) or [download](https://github.com/prod3v3loper/php-auto-autoloader/archive/master.zip) and use it.
 
 ```
 git clone https://github.com/prod3v3loper/syntaxo.git /Users/username/projects/
