@@ -1,4 +1,6 @@
-# 🏗 PHP Auto Autoloader 
+<div align="center">
+
+![Melabuai Logo](https://raw.githubusercontent.com/prod3v3loper/syntaxo/master/img/icon-MB.png "Melabuai Brand")
 
 ![Language](https://img.shields.io/github/languages/top/prod3v3loper/php-auto-autoloader.svg?style=flat "Language")
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/90539baa57ba4ea1beb8451090f42547)](https://www.codacy.com/app/prod3v3loper/php-auto-autoloader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=prod3v3loper/php-auto-autoloader&amp;utm_campaign=Badge_Grade)
@@ -10,10 +12,16 @@
 ![MIT License](https://img.shields.io/github/license/prod3v3loper/php-auto-autoloader.svg?style=flat "MIT License")
 [![Website](https://img.shields.io/website-up-down-green-red/https/www.tnado.com/open-source-projects-by-prod3v3loper.svg?style=flat "Website")](https://www.tnado.com/open-source-projects-by-prod3v3loper/ "Website")
 
+**melabuai**
+
+# 🏗 PHP Auto Autoloader 
+
 With this autoloader, you do not need any more, no matter where you have a master in your root, the autoloader of MB tnado Ai will find it.
 [Theme Page of this Site](https://prod3v3loper.github.io/php-auto-autoloader/)
 
 # Usage
+
+</div>
 
 Instantiate your classes, interfaces, traits or even abstract classes, no matter where.
 The only thing you have to do is to integrate.
@@ -122,8 +130,11 @@ new \Aautoloder\Loader(array(MBT_DOCUMENT_ROOT));
     </body>
 </html>
 ```
+<div align="center">
 
 # Debug
+
+</div>
 
 `autoload/core.config.php`
 
@@ -137,7 +148,11 @@ Look at which classes where were found.
 define('MBT_DEBUG_DISPLAY_AUTOLOAD_SEARCH', true);
 ```
 
+<div align="center">
+
 # Root
+
+</div>
 
 The complete path is the directory path, that the autoloader get by self.
 
@@ -150,7 +165,11 @@ define('MBT_SERVER_ROOT', str_replace(MBT_DOCUMENT_ROOT, '', str_replace(filter_
 define('MBT_HTTP_ROOT', get_protocol() . get_host() . MBT_SERVER_ROOT);
 ```
 
+<div align="center">
+
 # Loader methods
+
+</div>
 
 The autoloader finds everything yourself you do not have to do anything except write your class and instanzieren and use.
 
@@ -216,6 +235,8 @@ Type | Sample | Description
 PATH | `/users/username/projects/sites/website/` | MBT_DOCUMENT_ROOT
 Then the result example | `/users/username/projects/sites/website/testclasses/classThree.php` | 
 
+<div align="center">
+
 # Information
 
 [tnado SEO & AMP CMS](https://www.tnado.com/), this autoloader is one of parts from Framework.
@@ -233,3 +254,5 @@ possible.
 # License
 
 [MIT](https://github.com/prod3v3loper/php-auto-autoloader/blob/master/LICENSE)
+
+</div>
