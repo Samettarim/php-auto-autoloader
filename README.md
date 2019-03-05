@@ -21,9 +21,9 @@ This solution extends the vendor autoloader because it calls the files with cert
 
 Download [Composer](https://getcomposer.org/) local or global. Check for more [Tutorial - NetBeans with Composer and Packagist](https://www.tnado.com/blog/netbeans-with-composer-and-packagist-the-php-package-manager/) for this one.
 
-You found the Syntaxo package on [Packagist - Syntaxo](https://packagist.org/packages/prod3v3loper/syntaxo).
+You found the Autoloader package on [Packagist - Syntaxo](https://packagist.org/packages/prod3v3loper/php-auto-autoloader).
 
-Add the Syntaxo dependencie to the **composer.json** and set the autoload.
+Add the Autoloader dependencie to the **composer.json** and set the autoload.
 ```json
 {
     ...
@@ -41,7 +41,10 @@ Now run the composer install command with php
 ```
 php composer.phar install
 ```
+
 This is the vendor autoloader invites our autoloader and now we do not need to specify any more class and can load all our classes.
+
+`index.php`
 ```php
 <?php
 define('MBT_DOCUMENT_ROOT', __DIR__);
@@ -79,10 +82,12 @@ new \Aautoloder\Loader(array(MBT_DOCUMENT_ROOT));
 Get per [Git](https://git-scm.com/) or [download](https://github.com/prod3v3loper/php-auto-autoloader/archive/master.zip) and use it.
 
 ```
-git clone https://github.com/prod3v3loper/syntaxo.git /Users/username/projects/
+git clone https://github.com/prod3v3loper/php-auto-autoloader.git /Users/username/projects/
 ```
 
 So we use it without a vendor and can start a direct call.
+
+`index.php`
 ```php
 <?php
 define('MBT_DOCUMENT_ROOT', __DIR__);
