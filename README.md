@@ -2,8 +2,11 @@
 
 ![Language](https://img.shields.io/github/languages/top/prod3v3loper/php-auto-autoloader.svg?style=flat "Language")
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/90539baa57ba4ea1beb8451090f42547)](https://www.codacy.com/app/prod3v3loper/php-auto-autoloader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=prod3v3loper/php-auto-autoloader&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.org/prod3v3loper/syntaxo.svg?branch=master "Build Status")](https://travis-ci.org/prod3v3loper/syntaxo "Build Status")
 ![Repo Size](https://img.shields.io/github/repo-size/prod3v3loper/php-auto-autoloader.svg?style=flat "Repo size")
 ![Code SIze](https://img.shields.io/github/languages/code-size/prod3v3loper/php-auto-autoloader.svg?style=flat "Code size")
+![Github Release date](https://img.shields.io/github/release/prod3v3loper/php-auto-autoloader.svg?style=flat "Github Release date")
+![Packgist PHP Version](https://img.shields.io/packagist/php-v/prod3v3loper/php-auto-autoloader.svg?style=flat "Packgist PHP Version")
 ![MIT License](https://img.shields.io/github/license/prod3v3loper/php-auto-autoloader.svg?style=flat "MIT License")
 [![Website](https://img.shields.io/website-up-down-green-red/https/www.tnado.com/open-source-projects-by-prod3v3loper.svg?style=flat "Website")](https://www.tnado.com/open-source-projects-by-prod3v3loper/ "Website")
 
