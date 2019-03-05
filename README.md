@@ -12,21 +12,40 @@ With this autoloader, you do not need any more, no matter where you have a maste
 
 # Usage
 
-The only thing you have to do is to integrate the file `init.php` and the autoload folder to the root of your project, that's it :)
-And now instantiate your classes, interfaces, traits or even abstract classes, no matter where.
+Instantiate your classes, interfaces, traits or even abstract classes, no matter where.
+The only thing you have to do is to integrate.
 
-## Git clone
+## Packagist with Composer
 
+This solution extends the vendor autoloader because it calls the files with certain criteria. The extension allows you to call classes wherever the Autloder is involved.
+
+Download [Composer](https://getcomposer.org/) local or global. Check for more [Tutorial - NetBeans with Composer and Packagist](https://www.tnado.com/blog/netbeans-with-composer-and-packagist-the-php-package-manager/) for this one.
+
+You found the Syntaxo package on [Packagist - Syntaxo](https://packagist.org/packages/prod3v3loper/syntaxo).
+
+Add the Syntaxo dependencie to the **composer.json** and set the autoload.
+```json
+{
+    ...
+    "autoload": {
+        "psr-4": { "Aautoloder\\": "autoload/src" }
+    },
+    "require": {
+        "prod3v3loper/php-auto-autoloader": ">=1.0"
+    }
+    ...
+}
 ```
-git clone https://github.com/prod3v3loper/syntaxo.git /Users/username/projects/
+
+Now run the composer install command with php
 ```
-
-Get per [Git](https://git-scm.com/) or download and use it.
-
+php composer.phar install
+```
+This is the vendor autoloader invites our autoloader and now we do not need to specify any more class and can load all our classes.
 ```php
 <?php
 define('MBT_DOCUMENT_ROOT', __DIR__);
-require_once './autoload/src/Loader.php';
+require_once __DIR__ . '/vendor/autoload.php';
 new \Aautoloder\Loader(array(MBT_DOCUMENT_ROOT));
 ?>
 <!DOCTYPE html>
@@ -55,25 +74,19 @@ new \Aautoloder\Loader(array(MBT_DOCUMENT_ROOT));
 </html>
 ```
 
-## Packagist with Composer
+## Git clone
 
-This solution extends the vendor autoloader because it calls the files with certain criteria. The extension allows you to call classes wherever the Autloder is involved.
+Get per [Git](https://git-scm.com/) or download and use it.
 
-Autoload and package in **composer.json**
-```json
-{
-    "autoload": {
-        "psr-4": { "Aautoloder\\": "autoload/src" }
-    },
-    "require": {
-        "prod3v3loper/php-auto-autoloader": ">=1.0"
-    },
+```
+git clone https://github.com/prod3v3loper/syntaxo.git /Users/username/projects/
 ```
 
+So we use it without a vendor and can start a direct call.
 ```php
 <?php
 define('MBT_DOCUMENT_ROOT', __DIR__);
-require_once __DIR__ . '/vendor/autoload.php';
+require_once './autoload/src/Loader.php';
 new \Aautoloder\Loader(array(MBT_DOCUMENT_ROOT));
 ?>
 <!DOCTYPE html>
@@ -199,7 +212,7 @@ Then the result example | `/users/username/projects/sites/website/testclasses/cl
 
 [tnado SEO & AMP CMS](https://www.tnado.com/), this autoloader is one of parts from Framework.
 
-## Contribute
+# Contribute
 
 Please an [issue](https://github.com/prod3v3loper/php-auto-autoloader/issues) if you
 think something could be improved. Please submit Pull Requests when ever
