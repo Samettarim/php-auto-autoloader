@@ -122,7 +122,7 @@ The complete path is the directory path, that the autoloader get by self.
 
 DEFAULT: `MBT_DOCUMENT_ROOT`
 
-The autoloader define get the web root by self on require the `init.php`
+The autoloader define get the web root by self after set `MBT_DOCUMENT_ROOT`
 ```php
 define('MBT_DOCUMENT_ROOT', __DIR__);
 define('MBT_SERVER_ROOT', str_replace(MBT_DOCUMENT_ROOT, '', str_replace(filter_input(INPUT_SERVER, 'DOCUMENT_ROOT'), '', str_replace("\\", "/", MBT_DOCUMENT_ROOT))));
