@@ -16,8 +16,7 @@
 
 # 🏗 PHP Auto Autoloader 
 
-With this autoloader, you do not need any more, no matter where you have a master in your root, the autoloader of MB tnado Ai will find it.
-[Theme Page of this Site](https://prod3v3loper.github.io/php-auto-autoloader/)
+With this autoloader, you do not need any more, no matter where you have a master in your root, the autoloader of MB tnado Ai will find it. The classes found can be indexed to retry without searching.
 
 # Usage
 
@@ -138,12 +137,17 @@ new \Aautoloder\Loader(array(MBT_DOCUMENT_ROOT));
 
 `autoload/core.config.php`
 
-Set this to false so that you no longer see the debugging
+Indexing of the found classes, default is `true`.
+```php
+define('MBT_CORE_AUTOLOAD_INDEX', true);
+```
+
+Set this to false so that you no longer see the debugging, default is `true`.
 ```php
 define('MBT_DEBUG_DISPLAY_AUTOLOAD', true);
 ```
 
-Look at which classes where were found.
+Look at which classes where were found, default is `true`.
 ```php
 define('MBT_DEBUG_DISPLAY_AUTOLOAD_SEARCH', true);
 ```
