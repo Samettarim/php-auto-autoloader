@@ -142,6 +142,11 @@ Indexing of the found classes, default is `true`.
 define('MBT_CORE_AUTOLOAD_INDEX', true);
 ```
 
+Maximum number of lines to read in a file, default is `49`.
+```php
+define('MBT_CORE_AUTOLOAD_READ_MAX_LINES', 49);
+```
+
 Set this to false so that you no longer see the debugging, default is `true`.
 ```php
 define('MBT_DEBUG_DISPLAY_AUTOLOAD', true);
