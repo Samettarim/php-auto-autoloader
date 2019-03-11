@@ -131,7 +131,7 @@ new \Aautoloder\Loader(array(MBT_DOCUMENT_ROOT));
 ```
 <div align="center">
 
-# Debug
+# Debug & Core Settings
 
 </div>
 
