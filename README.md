@@ -28,7 +28,7 @@ The only thing you have to do is to integrate.
 
 ## Packagist with Composer
 
-This solution extends the vendor autoloader because it calls the files with certain criteria. The extension allows you to call classes wherever the Autloder is involved.
+This solution extends the vendor autoloader because it calls the files with certain criteria. The extension allows you to call classes wherever the Autoloader is involved.
 
 Download [Composer](https://getcomposer.org/) local or global. Check for more [Tutorial - NetBeans with Composer and Packagist](https://www.tnado.com/blog/netbeans-with-composer-and-packagist-the-php-package-manager/) for this one.
 
@@ -161,6 +161,7 @@ DEFAULT: `MBT_DOCUMENT_ROOT`
 The autoloader define get the web root by self after set `MBT_DOCUMENT_ROOT`
 ```php
 define('MBT_DOCUMENT_ROOT', __DIR__);
+
 define('MBT_SERVER_ROOT', str_replace(MBT_DOCUMENT_ROOT, '', str_replace(filter_input(INPUT_SERVER, 'DOCUMENT_ROOT'), '', str_replace("\\", "/", MBT_DOCUMENT_ROOT))));
 define('MBT_HTTP_ROOT', get_protocol() . get_host() . MBT_SERVER_ROOT);
 ```
@@ -171,7 +172,7 @@ define('MBT_HTTP_ROOT', get_protocol() . get_host() . MBT_SERVER_ROOT);
 
 </div>
 
-The autoloader finds everything yourself you do not have to do anything except write your class and instanzieren and use.
+The autoloader finds everything yourself you do not have to do anything except write your class and instance and use.
 
 Method | Namespace (Instance) | Path | Load Time
 ------------ | ------------ | ------------- | -------------
