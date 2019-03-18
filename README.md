@@ -259,10 +259,10 @@ possible.
 
 # Authors
 
-**Samet Tarim** - *All works* - [prod3v3loper](https://www.tnado.com/author/prod3v3loper/)
+**Samet Tarim** - *All works*
 
 # License
 
-[MIT](https://github.com/prod3v3loper/php-auto-autoloader/blob/master/LICENSE)
+[MIT](https://github.com/prod3v3loper/php-auto-autoloader/blob/master/LICENSE) - [prod3v3loper](https://www.tnado.com/author/prod3v3loper/)
 
 </div>
